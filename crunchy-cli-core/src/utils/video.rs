@@ -18,7 +18,8 @@ pub async fn stream_data_from_stream(
     {
         // if only one hardsub locale exists, assume that this stream doesn't really contains hardsubs
         if hardsub_locales.len() == 1 {
-            (Some(hardsub_locales.remove(0)), false)
+            // (Some(hardsub_locales.remove(0)), false)
+            (None, false)
         } else {
             // fallback to `None`. this should trigger an error message in `stream.dash_streaming_data`
             // that the requested stream is not available
